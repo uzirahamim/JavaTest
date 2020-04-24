@@ -5,3 +5,24 @@ spring :
   application :
     name : Bootstrap Spring Boot
 
+  datasource :
+    # default connection pool
+    hikari :
+      connectionTimeout : 20000
+      maximumPoolSize : 5
+
+    # PostgreSQL
+    url : jdbc:postgresql://localhost:5432/securechangeworkflow
+    username : securechange
+    password : securechange
+
+
+  jpa :
+    properties :
+      hibernate :
+        # The SQL dialect makes Hibernate generate better SQL for the chosen database
+        dialect : org.hibernate.dialect.PostgreSQLDialect
+
+    # Hibernate ddl auto (create, create-drop, validate, update)
+    hibernate :
+      ddl-auto : update
